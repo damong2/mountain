@@ -4,6 +4,7 @@
   top: 0;
   width: 100%;
   z-index: 9999;
+  backdrop-filter: blur(15px);
 }
 .header_inner {
   display: flex;
@@ -22,10 +23,10 @@
   font-size: 12px;
   display: block;
 }
-.head_nav {
+/* .head_nav {
 }
 .head_nav ul {
-}
+} */
 .head_nav ul li {
   display: inline-block;
 }
@@ -89,9 +90,9 @@
     display: block;
   }
   .head_nav {
-    /* display: none; */
+    display: none;
   }
-  .header_nav.show {
+  .head_nav.show {
     display: block;
   }
 

@@ -13,7 +13,7 @@ gsap.to(horSection, {
 
     pin: true,
     scrub: 1,
-    markers: true,
+    // markers: true,
 
     invalidateOnRefresh: true, //refrexh 될 때마다 다시 계산
     anticipatePin: 1, // pin 시작할 때 화면 튀는 현상 줄여주는 옵션
