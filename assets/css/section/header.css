@@ -1,0 +1,119 @@
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(123, 123, 123, 0.5);
+}
+.head_logo {
+  font-style: 0.9rem;
+  text-align: center;
+  text-transform: uppercase; /* 영문 전부 대문자 변환 */
+  line-height: 1;
+}
+.head_logo em {
+  font-size: 12px;
+  display: block;
+}
+.head_nav {
+}
+.head_nav ul {
+}
+.head_nav ul li {
+  display: inline-block;
+}
+.head_nav ul li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 14px;
+  position: relative;
+}
+.head_nav ul li a::before {
+  content: "";
+  width: calc(100% - 28px); /* 가로줄 - 좌우패딩*/
+  height: 1px;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+.head_nav ul li a:hover::before {
+  transform: scale(1);
+}
+.header_nav_mobile {
+  width: 40px;
+  height: 40px;
+  display: none;
+  cursor: pointer;
+}
+.header_nav_mobile span {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--black);
+  margin-top: 19px;
+  position: relative;
+}
+.header_nav_mobile span::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: var(--black);
+  position: absolute;
+  top: 6px; /* bar를 위로 */
+  right: 0;
+  transition: width 0.3s;
+}
+.header_nav_mobile span::after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 6px; /* bar를 아래로 */
+  left: 0;
+  transition: width 0.3s;
+}
+
+@media (max-width: 800px) {
+  .header_nav_mobile {
+    display: block;
+  }
+  .head_nav {
+    /* display: none; */
+  }
+  .header_nav.show {
+    display: block;
+  }
+
+  .head_nav.show ul {
+    position: absolute;
+    right: 0;
+    top: 68px;
+    background-color: rgba(123, 123, 123, 0.3);
+    padding: 20px 8px 20px 20px;
+  }
+  .head_nav.show ul li {
+    display: block;
+    text-align: right;
+  }
+  .head_nav.show ul li a {
+    display: inline-block;
+    padding: 5px;
+  }
+  .head_nav.show + .header_nav_mobile span::before {
+    width: 20px;
+  }
+  .head_nav.show + .header_nav_mobile span::after {
+    width: 20px;
+  }
+}
