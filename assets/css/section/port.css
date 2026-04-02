@@ -15,6 +15,7 @@
   text-transform: uppercase;
   color: var(--black100);
   border-bottom: 0.4vw solid var(--black);
+  margin-bottom: 16px;
 }
 .port_wrap {
   display: flex;
